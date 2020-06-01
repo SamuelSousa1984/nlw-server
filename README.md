@@ -1,0 +1,3 @@
+Backend da aplicação do primeiro NLW da Rocketseat.
+
+Em desenvolvimento...
