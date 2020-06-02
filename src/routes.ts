@@ -2,12 +2,15 @@ import express from 'express';
 
 const routes = express.Router();
 
-routes.get('/', (req, res) => {
-  return res.json({message: 'success'});
-});
+import PointsController from './controllers/PointController';
+import ItemsController from './controllers/ItemController';
 
-routes.get('/users', (req, res) => {
-  return res.send('Hello Next Level Week');
-});
+const pointsController = new PointsController();
+const itemsController = new ItemsController();
+
+routes.get('/items', itemsController.index);
+routes.get('/points', pointsController.index);
+routes.post('/points', pointsController.create);
+routes.get('/points/:id', pointsController.show);
 
 export default routes;
